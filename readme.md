@@ -8,7 +8,7 @@ react-admin 后端服务代码，前端代码仓库在：https://github.com/ddzy
 
 ```js
 connect(
-  'mongodb://111.231.215.55/server_db2',
+  "mongodb://111.231.215.55/server_db2",
   { useNewUrlParser: true }
 );
 ```
@@ -18,3 +18,29 @@ npm install
 
 npm start
 ```
+
+### 更新记录
+
+#### 删除商品 接口
+
+##### 请求 URL：
+
+http://localhost:5000/manage/product/delete
+
+##### 请求方式：
+
+    POST
+
+##### 参数类型
+
+| 参数   | 是否必选 | 类型   | 说明    |
+| ------ | -------- | ------ | ------- |
+| \_id   | Y        | string | 商品 ID |
+
+##### 返回示例：
+
+     {
+      "status": 0
+    }
+
+#### 代码结构调整,采用 mvc 架构
