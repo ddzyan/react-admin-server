@@ -1,5 +1,6 @@
 const ProductModel = require("../models/ProductModel");
-
+const fs = require("fs");
+const path = require("path");
 /*
 得到指定数组的分页信息对象
  */
@@ -100,7 +101,6 @@ class ProductController {
   static delete(req, res) {
     const { _id } = req.body;
     ProductModel.findByIdAndDelete(_id, (err, doc) => {
-      console.log("doc :", doc);
       if (err) {
         res.send({ status: 1, msg: "删除商品异常,请重新尝试" });
       } else if (!doc) {
@@ -110,7 +110,11 @@ class ProductController {
         const { imgs } = doc;
         imgs.forEach(img_path => {
           const file_path = path.join(__dirname, "../public/upload", img_path);
-          fs.unlink(file_path);
+          fs.stat(file_path, (err, stats) => {
+            if (!err && stats) {
+              fs.unlinkSync(file_path);
+            }
+          });
         });
         res.send({ status: 0 });
       }
