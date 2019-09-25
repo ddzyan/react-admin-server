@@ -4,13 +4,12 @@
 const express = require("express");
 const md5 = require("blueimp-md5");
 
+const RoleModel = require("../models/RoleModel");
+const UserModel = require("../models/UserModel");
 const productRouter = require("./product");
 const userRouter = require("./user");
 const roleRouter = require("./role");
 const categoryRouter = require("./category");
-const UserModel = require("../models/UserModel");
-
-const RoleModel = require("../models/RoleModel");
 
 // 得到路由器对象
 const router = express.Router();

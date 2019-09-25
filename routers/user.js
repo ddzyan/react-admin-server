@@ -9,6 +9,9 @@ router.post("/add", UserController.add);
 // 更新用户
 router.post("/update", UserController.update);
 
+// 删除用户
+router.post("/delete", UserController.delete);
+
 // 获取用户信息的路由(根据cookie中的userid)
 /*router.get('/user', (req, res) => {
   // 从请求的cookie得到userid

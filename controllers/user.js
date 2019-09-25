@@ -1,6 +1,6 @@
-const md5 =require("blueimp-md5")
+const md5 = require("blueimp-md5");
 const UserModel = require("../models/UserModel");
-
+const RoleModel = require("../models/RoleModel");
 // 指定需要过滤的属性
 const filter = { password: 0, __v: 0 };
 class UserController {
