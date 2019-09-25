@@ -1,3 +1,4 @@
+const md5 =require("blueimp-md5")
 const UserModel = require("../models/UserModel");
 
 // 指定需要过滤的属性
