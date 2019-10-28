@@ -1,6 +1,6 @@
 ## 简介
 
-react-admin 后端服务代码，前端代码仓库在：https://github.com/ddzyan/react-demo/tree/master/react_admin
+react-admin 后端服务代码，前端代码仓库在：https://github.com/ddzyan/react-demo/tree/master/react-admin
 
 ### 使用
 
